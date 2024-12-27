@@ -1,5 +1,6 @@
 'use client';
 
+import { formatDate } from '@/utils/formatDate';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -52,7 +53,7 @@ const PostDetailPage = ({ params }) => {
         <div className="container mx-auto py-10 flex flex-col gap-4 min-h-screen">
             <div className="flex justify-between items-end font-black border-b border-gray-300 pb-5">
                 <h2 className="text-4xl">{post.title}</h2>
-                <span className="text-gray-400 block text-right">{post.createdAt}</span>
+                <span className="text-gray-400 block text-right">{formatDate(post.createdAt)}</span>
             </div>
             <p className="text-xl flex-1">{post.content}</p>
             <div className="flex border-t border-gray-300 pt-5">

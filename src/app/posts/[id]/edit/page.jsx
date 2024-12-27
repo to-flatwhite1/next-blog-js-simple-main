@@ -30,12 +30,9 @@ const EditPage = ({ params }) => {
         try {
             const res = await axios.put(`/api/posts/${resolvedParams.id}`, { title, content });
 
-            if (res.status === 201) {
-                alert('글수정 완료');
-                router.push('/posts');
-            } else {
-                alert('글수정 실패');
-            }
+            console.log(res);
+            alert('글수정 완료');
+            router.push('/posts');
         } catch (error) {
             console.error(error);
             alert('오류 발생');
